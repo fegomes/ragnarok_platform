@@ -4,7 +4,9 @@
 #include <SFML\Graphics\Texture.hpp>
 #include <SFML\Graphics\Sprite.hpp>
 
-class character
+#include "object.h"
+
+class character : public object
 {
 public:
 	character();
@@ -14,7 +16,9 @@ public:
 	enum moviment {
 		idle,
 		walk,
+		walk_back,
 		run,
+		run_back,
 		attack,
 		hurt,
 		die
@@ -26,9 +30,9 @@ public:
 	void load_texture_from_file(const std::string& file);
 	void load_moviment();
     void execute(moviment m);
-	sf::Sprite& draw();
+	const sf::Drawable& draw();
 
-private:
+public:
 	sf::Texture _texture;
 	sf::Sprite  _sprite;
 	action      _action;

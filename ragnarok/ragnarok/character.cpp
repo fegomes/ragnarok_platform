@@ -13,15 +13,19 @@ character::~character()
 
 void character::load_texture_from_file(const std::string & file)
 {
-	_texture.loadFromFile(file);
+	sf::Image image;
+	image.loadFromFile(file);
+	_texture.loadFromImage(image);
 	_sprite.setTexture(_texture);
 }
 
 void character::load_moviment() {
 	_action[moviment::idle].push_back(sf::IntRect(230, 75, 38, 75));
 
-	_action[moviment::walk].push_back(sf::IntRect(270, 75, 45, 75));
+	_action[moviment::walk].push_back(sf::IntRect(265, 75, 50, 75));
 	_action[moviment::walk].push_back(sf::IntRect(312, 75, 39, 75));
+	_action[moviment::walk].push_back(sf::IntRect(38, 75, 32, 75));
+	_action[moviment::walk].push_back(sf::IntRect(69, 75, 38, 75));
 	_action[moviment::walk].push_back(sf::IntRect(105, 75, 50, 75));
 	_action[moviment::walk].push_back(sf::IntRect(155, 75, 45, 75));
 	_action[moviment::walk].push_back(sf::IntRect(198, 75, 35, 75));
@@ -37,15 +41,21 @@ void character::execute(moviment m)
 		_it = _action[m].begin();
 	}
 	else {
-		_it++;
+		if (_it != _action[m].end()) {
+			_it++;
+		}
+
 		if (_it == _action[m].end()) {
 			_it = _action[m].begin();
 		}
 	}
-	_sprite.setTextureRect(*_it);
+
+	if (_it != _action[m].end()) {
+		_sprite.setTextureRect(*_it);
+	}
 }
 
-sf::Sprite & character::draw()
+const sf::Drawable& character::draw()
 {
 	return _sprite;
 }
