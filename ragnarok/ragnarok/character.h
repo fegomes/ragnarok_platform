@@ -1,8 +1,12 @@
 #pragma once
 #include <string>
 #include <unordered_map>
+
 #include <SFML\Graphics\Texture.hpp>
 #include <SFML\Graphics\Sprite.hpp>
+#include <SFML\Window\Event.hpp>
+
+#include <boost\signals2.hpp>
 
 #include "object.h"
 
@@ -31,6 +35,10 @@ public:
 	void load_moviment();
     void execute(moviment m);
 	const sf::Drawable& draw();
+
+	void key_pressed(const sf::Event& k) {
+		execute(character::moviment::walk);
+	}
 
 public:
 	sf::Texture _texture;

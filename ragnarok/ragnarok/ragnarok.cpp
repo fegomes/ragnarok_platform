@@ -4,10 +4,12 @@
 #include "stdafx.h"
 
 #include <SFML/Graphics.hpp>
+#include <boost\signals2.hpp>
 
 #include "layer.h"
 #include "character.h"
 #include "node.h"
+#include "event.h"
 
 
 int main()
@@ -27,6 +29,8 @@ int main()
 	layers.push_back(player);
 	layers.push_back(layer("player2", c2));
 
+	key_pressed.connect(boost::bind(&character::key_pressed, &c, _1));
+
 	while (window.isOpen())
 	{
 
@@ -39,12 +43,7 @@ int main()
 		}
 
 		if (event.type == sf::Event::KeyPressed) {
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-				c.execute(character::moviment::walk);
-			}
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-				c.execute(character::moviment::walk_back);
-			}
+			key_pressed(event);
 		}
 
 
@@ -52,6 +51,8 @@ int main()
 		layers.draw(window);
 		window.display();
 	}
+
+	key_pressed.disconnect_all_slots();
 
 	return 0;
 }
