@@ -1,7 +1,86 @@
-﻿  character.cpp
-  Generating Code...
-  Compiling...
-  ragnarok.cpp
-  Generating Code...
-  ragnarok.vcxproj -> C:\Users\nando\Source\Repos\ragnarok_platform\ragnarok\x64\Debug\ragnarok.exe
-  ragnarok.vcxproj -> C:\Users\nando\Source\Repos\ragnarok_platform\ragnarok\x64\Debug\ragnarok.pdb (Full PDB)
+﻿  ragnarok.cpp
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(246): error C2535: 'std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<_Kty,_Ty>>>>,bool> std::map<_Kty,_Ty,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::try_emplace(const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &,_Mappedty &&...)': member function already defined or declared
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(226): note: see declaration of 'std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::try_emplace'
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\users\nando\source\repos\ragnarok_platform\ragnarok\ragnarok\node.h(36): note: see reference to class template instantiation 'std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>' being compiled
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(54): note: see reference to class template instantiation 'boost::arg<9>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(53): note: see reference to class template instantiation 'boost::arg<8>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(52): note: see reference to class template instantiation 'boost::arg<7>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(51): note: see reference to class template instantiation 'boost::arg<6>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(50): note: see reference to class template instantiation 'boost::arg<5>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(49): note: see reference to class template instantiation 'boost::arg<4>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(48): note: see reference to class template instantiation 'boost::arg<3>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(47): note: see reference to class template instantiation 'boost::arg<2>' being compiled
+  c:\users\nando\documents\boost_1_63_0\boost\bind\placeholders.hpp(46): note: see reference to class template instantiation 'boost::arg<1>' being compiled
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(254): error C2535: 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<_Kty,_Ty>>>> std::map<_Kty,_Ty,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::try_emplace(std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<_Kty,_Ty>>>>,const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &,_Mappedty &&...)': member function already defined or declared
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(233): note: see declaration of 'std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::try_emplace'
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(299): error C2535: 'std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<_Kty,_Ty>>>>,bool> std::map<_Kty,_Ty,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::insert_or_assign(const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &,_Mappedty &&)': member function already defined or declared
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(278): note: see declaration of 'std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::insert_or_assign'
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(307): error C2535: 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<_Kty,_Ty>>>> std::map<_Kty,_Ty,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::insert_or_assign(std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<_Kty,_Ty>>>>,const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &,_Mappedty &&)': member function already defined or declared
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(286): note: see declaration of 'std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::insert_or_assign'
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(337): error C2535: 'object &std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::operator [](const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)': member function already defined or declared
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(176): note: see declaration of 'std::map<const std::string &,object,std::less<_Kty>,std::allocator<std::pair<_Kty,_Ty>>>::operator []'
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(243): error C2259: 'object': cannot instantiate abstract class
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(243): note: due to following members:
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(243): note: 'const sf::Drawable &object::draw(void) const': is abstract
+  c:\users\nando\source\repos\ragnarok_platform\ragnarok\ragnarok\object.h(15): note: see declaration of 'object::draw'
+  c:\users\nando\source\repos\ragnarok_platform\ragnarok\ragnarok\node.h(15): note: see reference to class template instantiation 'std::pair<_Kty,_Ty>' being compiled
+          with
+          [
+              _Kty=const std::string &,
+              _Ty=object
+          ]

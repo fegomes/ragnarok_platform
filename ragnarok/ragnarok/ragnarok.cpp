@@ -7,52 +7,47 @@
 #include <boost\signals2.hpp>
 
 #include "layer.h"
-#include "character.h"
 #include "node.h"
+#include "rectangle.h"
 #include "event.h"
 
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1024, 800), "Welcome");
+	event ev;
+	layer layers("Main");
 
-	layer layers("Teste", node());
-	character c;
-	c.load_texture_from_file("resource\\novice_m.png");
-	c.load_moviment();
+	auto player = node();
+	rectangle r;
+	player.push_back("rectangle", r);
 
-	character c2;
-	c2.load_texture_from_file("resource\\novice_m.png");
-	c2.load_moviment();
-	c2._sprite.setPosition(100, 100);
-	layer player("player", c);
-	layers.push_back(player);
-	layers.push_back(layer("player2", c2));
+	//auto player2 = layer("player2", node());
+	//rectangle *r2 = new rectangle();
+	//player2.push_back(layer("rectangle", *r2));
 
-	key_pressed.connect(boost::bind(&character::key_pressed, &c, _1));
+	//layers.push_back(layer("map", object()));
+	layers.push_back("player", player);
+	//layers.push_back(player2);
+	//layers.push_back(layer("ball", object()));
+
+
 
 	while (window.isOpen())
 	{
-
-		sf::Event event;
-		while (window.pollEvent(event))
+		while (window.pollEvent(ev))
 		{
-			if (event.type == sf::Event::Closed) {
+			if (ev.type == sf::Event::Closed) {
 				window.close();
 			}
 		}
 
-		if (event.type == sf::Event::KeyPressed) {
-			key_pressed(event);
-		}
-
+		ev.run();
 
 		window.clear(sf::Color(92, 197, 242));
 		layers.draw(window);
 		window.display();
 	}
-
-	key_pressed.disconnect_all_slots();
 
 	return 0;
 }

@@ -1,41 +1,41 @@
 #pragma once
 #include <string>
-#include <vector>
+#include <map>
 #include <memory>
 
-#include "object.h"
+#include "node.h"
 
-class layer : public std::vector<layer> {
+class layer {
 
 public:
-	layer(const std::string& name, object& obj) : _object(obj) { _name = name; }
+	layer(const std::string& name) : _name(name) { }
 	virtual ~layer() {};
 
 public:
-	void set_object(const object& obj) {
-		_object = obj;
-	}
-
-	object& get_object() {
-		return _object;
-	}
 
 	void draw(sf::RenderWindow& w) {
-		for (auto ci = begin(); ci != end(); ci++) {
-			object &obj = (*ci).get_object();
-
+		for (auto ci = _layers.begin(); ci != _layers.end(); ci++) {
+			const object &obj = ci->second;
 			if (obj.is_node()) {
-				layer& l = (layer&)obj;
-				l.draw(w);
+				node& n = (node&) obj;
+				n.draw(w);
 			} else {
-				w.draw(obj.draw());
+				if (obj.is_visible()) {
+					w.draw(obj.draw());
+				}
 			}
 		}
 	}
 
-	
+	const std::string& name() const {
+		return _name;
+	}
+
+	void push_back(const std::string& name, object& obj) {
+		_layers[name] = obj;
+	}
 	
 private:
-	object&      _object;
-	std::string  _name;
+	std::string _name;
+	std::map<const std::string&, object> _layers;
 };
